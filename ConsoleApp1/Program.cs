@@ -16,7 +16,6 @@ while (true)
         {
             case 1:
                 Ejercicio1 InteresGenerado = new Ejercicio1();
-                InteresGenerado.llenardatos();
                 break;
             case 2:
                 Ejercicio2 ConversionDivisas = new Ejercicio2();
