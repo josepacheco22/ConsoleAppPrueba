@@ -16,12 +16,6 @@ namespace ConsoleApp1.Ejercicios
             var Salir = true;
             CodigoDivisa.Add("USD");
             ValorDivisa.Add(1.0);
-            CodigoDivisa.Add("MXN");
-            ValorDivisa.Add(17.08);
-            CodigoDivisa.Add("EUR");
-            ValorDivisa.Add(0.9);
-            CodigoDivisa.Add("JPY");
-            ValorDivisa.Add(140.36);
             while (Salir)
             {
                 try
