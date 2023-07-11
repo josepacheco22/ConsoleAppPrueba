@@ -21,8 +21,6 @@ namespace ConsoleApp1.Ejercicios
                 try
                 {
                     Console.Clear();
-
-                    Console.WriteLine("Divisa base es USD");
                     Console.WriteLine("1. Ingresar Nueva Divisa");
                     Console.WriteLine("2. Editar Divisa");
                     Console.WriteLine("3. Mostrar Divisas");
