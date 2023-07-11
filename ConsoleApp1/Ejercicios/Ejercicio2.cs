@@ -16,6 +16,12 @@ namespace ConsoleApp1.Ejercicios
             var Salir = true;
             CodigoDivisa.Add("USD");
             ValorDivisa.Add(1.0);
+            CodigoDivisa.Add("MXN");
+            ValorDivisa.Add(17.08);
+            CodigoDivisa.Add("EUR");
+            ValorDivisa.Add(0.9);
+            CodigoDivisa.Add("JPY");
+            ValorDivisa.Add(140.36);
             while (Salir)
             {
                 try
@@ -77,7 +83,7 @@ namespace ConsoleApp1.Ejercicios
             while (SalidaIngresoValores)
             {
                 Console.Clear();
-                Console.WriteLine("Ingrese valor para " + CodigoAgregarNuevaDivisa + ": ");
+                Console.WriteLine("Ingrese valor para " + CodigoAgregarNuevaDivisa + "(considerar divisa base USD 1.00): ");
                 Console.WriteLine("");
                 try
                 {
@@ -114,7 +120,7 @@ namespace ConsoleApp1.Ejercicios
                     }
                     else
                     {
-                        for (int i = 1; i <= CodigoDivisa.Count(); i++)
+                        for (int i = 2; i <= CodigoDivisa.Count(); i++)
                         {
                             if ((int.Parse(OpcionEditar)) == i)
                             {
@@ -122,7 +128,8 @@ namespace ConsoleApp1.Ejercicios
                                 SalirEditarDivisa = false;
                             }
                         }
-                        
+                        Console.Clear();
+
                     }
                 }
                 catch { Console.Clear(); }
@@ -153,7 +160,7 @@ namespace ConsoleApp1.Ejercicios
             {
                 Console.Clear();
                 Console.Clear(); Console.WriteLine("Datos de divisa Anterior Codigo:" + CodigoDivisa[OpcionEditar - 1] + " Valor:" + ValorDivisa[OpcionEditar - 1]);
-                Console.WriteLine("Ingrese valor para " + CodigoNuevaDivisa + ": ");
+                Console.WriteLine("Ingrese valor para " + CodigoNuevaDivisa + " (considerar divisa base USD 1.00): ");
                 Console.WriteLine("");
                 try
                 {
@@ -196,7 +203,6 @@ namespace ConsoleApp1.Ejercicios
             {
                 Console.Clear();
                 Console.WriteLine("Seleccionar divisa origen a utilizar");
-                Console.WriteLine("");
                 MostrarDivisa();
                 try{
                     DivisaOrigen = int.Parse(Console.ReadLine())-1;
@@ -215,7 +221,6 @@ namespace ConsoleApp1.Ejercicios
                 Console.Clear();
                 Console.WriteLine("Divisa Origen:" + CodigoDivisa[DivisaOrigen]);
                 Console.WriteLine("Seleccionar divisa destino a utilizar");
-                Console.WriteLine("");
                 MostrarDivisa();
                 try
                 {
@@ -244,7 +249,9 @@ namespace ConsoleApp1.Ejercicios
                 }
                 catch { }
             }
-            var CalculoFinal = CantidadConvertir * (ValorDivisa[DivisaDestino] / ValorDivisa[DivisaOrigen]);
+
+
+            var CalculoDivisaUSDaDestino = Math.Round(CantidadConvertir * (ValorDivisa[DivisaDestino] / ValorDivisa[DivisaOrigen]), 2);
 
 
             Console.Clear();
@@ -258,7 +265,7 @@ namespace ConsoleApp1.Ejercicios
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("");
             Console.Write("Calculo Final: ");
-                Console.WriteLine("{0:N2}", CalculoFinal);
+                Console.WriteLine("{0:N2}", CalculoDivisaUSDaDestino);
 
                 Regresar();
             
